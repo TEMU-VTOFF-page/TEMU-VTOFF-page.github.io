@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="TEMU-VTOFF is a novel virtual try-off (VTOFF) framework that generates standardized product images from real-world photos of clothed individuals. It uses a dual DiT-based architecture with multimodal inputs to handle multiple garment categories and refine visual details.">
+  <meta property="og:title" content="Inverse Virtual Try-On: Generating Multi-Category Product-Style Images from Clothed Individuals"/>
+  <meta property="og:description" content="TEMU-VTOFF is a novel virtual try-off (VTOFF) framework that generates standardized product images from real-world photos of clothed individuals. It uses a dual DiT-based architecture with multimodal inputs to handle multiple garment categories and refine visual details."/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/teaser.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Inverse Virtual Try-On: Generating Multi-Category Product-Style Images from Clothed Individuals">
+  <meta name="twitter:description" content="TEMU-VTOFF is a novel virtual try-off (VTOFF) framework that generates standardized product images from real-world photos of clothed individuals. It uses a dual DiT-based architecture with multimodal inputs to handle multiple garment categories and refine visual details.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="">
+  <meta name="twitter:card" content="">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Fashion, Diffusion Transformer, Virtual Try-On, Virtual Try-Off, VTON, VTOFF, Garment Digitization, Multimodal Learning, Vision-Language Models, DiT, Generative Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Inverse Virtual Try-On: Generating Multi-Category Product-Style Images from Clothed Individuals</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Inverse Virtual Try-On: Generating Multi-Category Product-Style Images from Clothed Individuals</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=WEMoLPEAAAAJ&hl=en&oi=ao" target="_blank">Davide Lobba</a><sup>1,2,*</sup>,</span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=tSpzMUEAAAAJ&hl=en" target="_blank">Fulvio Sanguigni</a><sup>2,3,*</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=Md9maLYAAAAJ&hl=en" target="_blank">Bin Ren</a><sup>1,2</sup>,</span>
+                    <span class="author-block">
+                      <a href="https://scholar.google.com/citations?user=DzgmSJEAAAAJ&hl=en" target="_blank">Marcella Cornia</a><sup>3</sup>,</span>
+                      <span class="author-block">
+                        <a href="https://scholar.google.com/citations?user=OM3sZEoAAAAJ&hl=en" target="_blank">Rita Cucchiara</a><sup>3</sup>,</span>
+                        <span class="author-block">
+                          <a href="https://scholar.google.com/citations?user=stFCYOAAAAAJ&hl=en" target="_blank">Nicu Sebe</a><sup>1</sup>
+                          <span class="author-block">
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>University of Trento,</span>
+                    <span class="author-block"><sup>2</sup>University of Pisa,</span>
+                    <span class="author-block"><sup>3</sup>University of Modena and Reggio Emilia</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/davidelobba/TEMU-VTOFF" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser image-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="container">
+        <div class="item item-steve">
+          <img src="static/images/teaser.png"  width="100%">
+        </div>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        TEMU-VTOFF is a novel virtual try-off (VTOFF) framework that generates standardized product images from real-world photos of clothed individuals. It uses a dual DiT-based architecture with multimodal inputs to handle multiple garment categories and refine visual details.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser image -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            While virtual try-on (VTON) systems aim to render a garment onto a target person image, this paper tackles the novel task of virtual try-off (VTOFF), which addresses the inverse problem: generating standardized product images of garments from real-world photos of clothed individuals. Unlike VTON, which must resolve diverse pose and style variations, VTOFF benefits from a consistent and well-defined output format &mdash; typically a flat, lay-down-style representation of the garment &mdash; making it a promising tool for data generation and dataset enhancement. However, existing VTOFF approaches face two major limitations: <i>(i)</i> difficulty in disentangling garment features from occlusions and complex poses, often leading to visual artifacts, and <i>(ii)</i> restricted applicability to single-category garments (e.g., upper-body clothes only), limiting generalization. To address these challenges, we present Text-Enhanced MUlti-category Virtual Try-Off (<b>TEMU-VTOFF</b>), a novel architecture featuring a dual DiT-based backbone with a modified multimodal attention mechanism for robust garment feature extraction. Our architecture is designed to receive garment information from multiple modalities like images, text, and masks to work in a multi-category setting. Finally, we propose an additional alignment module to further refine the generated visual details. Experiments on VITON-HD and Dress Code datasets show that <b>TEMU-VTOFF</b> sets a new state-of-the-art on the VTOFF task, significantly improving both visual quality and fidelity to the target garments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="method-section">
+  <h2>Method</h2>
+  <div class="method-content">
+    <img src="static/images/method.png" class="method-image">
+    <p class="method-description">
+      <strong>Overall Framework of TEMU-VTOFF</strong>. The feature extractor \( F_E \) processes spatial inputs (noise, masked image, binary mask), and global inputs (model image via AdaLN). The intermediate keys and values 
+        \( \mathbf{K}^l_{\text{extractor}} \), \( \mathbf{V}^l_{\text{extractor}} \) are injected into the corresponding hybrid blocks of the garment generator \( F_D \). Then, the main DiT model generates the final garment leveraging the proposed MHA module. We align our model with a diffusion loss for the noise estimate and an alignment loss with clean, DINOv2 features of the target garment.      
+    </p>
+  </div>
+</section>
+
+<!-- Quantitative Results Section -->
+<section class="section quantitative-results-section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">
+      Quantitative Results
+    </h2>
+
+    <!-- Table 1 -->
+    <div class="box quantitative-table-container">
+      <h3 class="subtitle is-4 has-text-centered">Table 1: Results on Dress Code</h3>
+      <figure class="image">
+        <img src="static/images/table_dresscode.png" alt="Quantitative results on the Dress Code dataset.">
+      </figure>
+      <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9em;">
+        Quantitative results on the Dress Code dataset, considering both the entire test set and the three category-specific subsets.
+      </p>
+    </div>
+
+    <!-- Table 2 -->
+    <div class="box quantitative-table-container">
+      <h3 class="subtitle is-4 has-text-centered">Table 2: Ablation Study on Dress Code</h3>
+      <figure class="image">
+        <img src="static/images/table_ablation_dresscode.png" alt="Ablation study results on the Dress Code dataset, showing effects of text/mask conditioning and garment aligner components across 'All', 'Upper-Body', 'Lower-Body', and 'Dresses' categories.">
+      </figure>
+      <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9em;">
+        Ablation study of the proposed components on the Dress Code dataset.
+      </p>
+    </div>
+
+    <!-- Table 3 -->
+    <div class="box quantitative-table-container is-viton-table-image-container">
+      <h3 class="subtitle is-4 has-text-centered">Table 3: Results on VITON-HD</h3>
+      <figure class="image">
+        <img src="static/images/table_viton.png" alt="Quantitative results on the VITON-HD dataset, comparing methods for metrics like SSIM, LPIPS, DISTS, FID, and KID.">
+      </figure>
+      <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9em;">
+        Quantitative results on the VITON-HD dataset.
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- End Quantitative Results Section -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-fluid">
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: 1rem;">
+        Qualitative Results
+      </h2>
+
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/dresscode_competitors_PROJECT_PAGE_1.png" alt="TEMU-VTOFF and competitors on Dress Code dataset"/>
+          <h2 class="subtitle has-text-centered">
+            Visual comparison between TEMU-VTOFF and competitors on Dress Code dataset.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/dresscode_competitors_PROJECT_PAGE_2.png" alt="TEMU-VTOFF and competitors on Dress Code dataset"/>
+          <h2 class="subtitle has-text-centered">
+            Visual comparison between TEMU-VTOFF and competitors on Dress Code dataset.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/viton_competitors_PROJECT_PAGE_1.png" alt="TEMU-VTOFF and competitors on VITON-HD dataset"/>
+          <h2 class="subtitle has-text-centered">
+            Visual comparison between TEMU-VTOFF and competitors on VITON-HD dataset.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/viton_competitors_PROJECT_PAGE_2.png" alt="TEMU-VTOFF and competitors on VITON-HD dataset"/>
+          <h2 class="subtitle has-text-centered">
+            Visual comparison between TEMU-VTOFF and competitors on VITON-HD dataset.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/dresscode_inputs_PROJECT_PAGE_1.png" alt="Examples of input images for TEMU-VTOFF"/>
+          <h2 class="subtitle has-text-centered">
+            Examples of input images for TEMU-VTOFF.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/dresscode_inputs_PROJECT_PAGE_2.png" alt="Examples of input images for TEMU-VTOFF"/>
+          <h2 class="subtitle has-text-centered">
+            Examples of input images for TEMU-VTOFF.
+          </h2>
+        </div>
+    </div>
+  </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
